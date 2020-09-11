@@ -1,0 +1,25 @@
+{
+  "name": "testpractice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/berkayclk/node-tdd-practice.git"
+  },
+  "keywords": [
+    "node",
+    "tdd",
+    "practice",
+    "test"
+  ],
+  "author": "Berkay Çelik <berkayc78@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/berkayclk/node-tdd-practice/issues"
+  },
+  "homepage": "https://github.com/berkayclk/node-tdd-practice#readme"
+}
