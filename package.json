@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-     "start": "node app",	
-      "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app",
+    "test": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,10 @@
   "homepage": "https://github.com/berkayclk/node-tdd-practice#readme",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "jest": "^26.4.2",
+    "superrest": "^1.0.0",
+    "supertest": "^4.0.2"
   }
 }
