@@ -1,4 +1,5 @@
 const request = require('supertest');
+const bcrypt = require('bcrypt');
 const app = require('../../src/app');
 
 const sequelize = require('../../src/config/database');
@@ -79,6 +80,39 @@ describe('User success registration', () => {
             expect(user.username).toBe(userInfo.username);
             expect(user.id).toBe(res.body.data.id);
             done();
+          })
+          .catch((err) => {
+            done(err);
+          });
+      } catch (error) {
+        done(error);
+      }
+    });
+  });
+
+  test('hashes password of the user', (done) => {
+    postUser(userInfo).end((err, res) => {
+      if (err) {
+        return done(err);
+      }
+
+      try {
+        User.findAll({
+          where: {
+            email: userInfo.email,
+          },
+        })
+          .then((users) => {
+            expect(users).not.toBeNull();
+            expect(users.length).toBe(1);
+
+            const user = users[0];
+            expect(user.password).not.toBe(userInfo.password);
+            bcrypt.compare(userInfo.password, user.password, (err, isSame) => {
+              if (err) return done(err);
+              expect(isSame).toBe(true);
+              done();
+            });
           })
           .catch((err) => {
             done(err);
