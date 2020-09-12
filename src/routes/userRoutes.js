@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-router.post('/', (req, res, next) => {
-  res.status(501).send(); //not implemented
-});
+const UserController = require('../domains/User/userController');
+
+router.post('/', UserController.saveNewUser);
 
 module.exports = router;
