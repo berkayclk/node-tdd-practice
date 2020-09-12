@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const app = express();
 app.use(bodyParser.json());
 
-app.use(express.json());
+const UserRoutes = require('./routes/userRoutes');
+
+app.use('/users', UserRoutes);
 
 module.exports = app;
