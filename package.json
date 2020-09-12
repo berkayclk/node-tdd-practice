@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app",
+    "dev-start": "nodemon app",
     "test": "jest --watch",
     "lint ": "eslint ."
   },
@@ -32,6 +33,7 @@
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
     "jest": "^26.4.2",
+    "nodemon": "^2.0.4",
     "prettier": "^2.1.1",
     "superrest": "^1.0.0",
     "supertest": "^4.0.2"
