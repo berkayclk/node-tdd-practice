@@ -1,10 +1,10 @@
 const User = require('./User');
 
 exports.saveUser = async (userToCreate) => {
-    if( !userToCreate ) return null;
+  if (!userToCreate) return null;
 
-    const savedUser = await User.create(userToCreate);
-    delete savedUser.password;
+  const savedUser = await User.create(userToCreate);
+  delete savedUser.password;
 
-    return savedUser;
-}
+  return savedUser;
+};
